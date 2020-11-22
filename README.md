@@ -45,18 +45,40 @@ You should see:
 
 
 ## Usage
-In this case, I use Altair GraphQL Client for using the server.
+In this case, I use Altair GraphQL as a GraphQL client.
 
 If the external API is running, MongoDB is installed and this project running successfully, you would be able to use all the queries listed here:
 
 ```graphQL
-queries:
 
 seedVehiclesfromApi [Vehicle]
-(
+```
+Fetch data from external API, handle errors, insert in the Mongo DataBase created in the constructor. Return all info from the collection (vehicles) after being created.
+
+```graphQL
 getAllVehicles [Vehicle]
+```
+Return all info from the collection.
+
+```graphQL
 getVehicleById ( id ID ) Vehicle
+```
+Accepts a string. Return a vehicle where the vehicle id matches the supplied string.
+
+```graphQL
 getVehiclesByName ( name String ) [Vehicle]
+```
+Accepts a string. Return vehicles where the vehicle name partially or fully matches the supplied string. (The string input can be wherever in the name, not just the beginning).
+
+```graphQL
 getVehiclesByService ( serviceName String, serviceStatus String ) [Vehicle]
 ```
+Accepts a service name and a service status. Return all vehicles with the serviceName given. (Sadly, I couldn't achieve the complete requirement with the version of java-driver I am using).
 
+All the commits are in this repository and they can be checked.
+
+More than the result, I am glad to participate in the project, It was a good challenge.
+
+Tal Berenstein.
+
+PS: It's 17:46 at the moment, I will keep going with the last requirement with a bit more time than I have today.
