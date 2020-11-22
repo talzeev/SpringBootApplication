@@ -75,6 +75,7 @@ getVehiclesByService ( serviceName String, serviceStatus String ) [Vehicle]
 ```
 Accepts a service name and a service status. Return all vehicles with the serviceName given. (Sadly, I couldn't achieve the complete requirement with the version of java-driver I am using).
 
+Creation of models for good practices (escalability) but not in use for now.
 All the commits are in this repository and they can be checked.
 
 More than the result, I am glad to participate in the project, It was a good challenge.
