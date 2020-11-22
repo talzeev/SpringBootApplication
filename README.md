@@ -45,7 +45,7 @@ You should see:
 
 
 ## Usage
-In this case, I use Altair GraphQL as a GraphQL client.
+In this case, I use Altair GraphQL and Postmant as a GraphQL client, but It can be used with another client also.
 
 If the external API is running, MongoDB is installed and this project running successfully, you would be able to use all the queries listed here:
 
