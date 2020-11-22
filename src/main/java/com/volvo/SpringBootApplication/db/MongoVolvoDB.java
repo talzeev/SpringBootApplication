@@ -19,6 +19,9 @@ public class MongoVolvoDB {
     public static DB database;
     public static DBCollection collection;
 
+    @Autowired
+    private RestTemplateBuilder builder;
+
 
     public MongoVolvoDB() throws UnknownHostException {
         mongoClient = new MongoClient(new MongoClientURI("mongodb://localhost:27017"));
@@ -89,4 +92,10 @@ public class MongoVolvoDB {
          return collection.find((DBObject) regexQuery.append("name",
                 new BasicDBObject("$regex", name)));
     }
+
+    public DBCursor getVehiclesByService(String serviceName, String serviceStatus){
+        return  collection.find((DBObject) (new BasicDBObject("services.services.serviceName",serviceName))
+                .append("services.services.status",serviceStatus));
+    }
+
 }

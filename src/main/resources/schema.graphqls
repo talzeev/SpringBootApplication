@@ -31,4 +31,5 @@ type Query{
     getAllVehicles: [Vehicle]
     getVehicleById(id: ID): Vehicle
     getVehiclesByName(name: String): [Vehicle]
+    getVehiclesByService(serviceName: String, serviceStatus: String): [Vehicle]
 }

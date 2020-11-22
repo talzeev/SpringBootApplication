@@ -31,6 +31,11 @@ public class VehicleDataFetcher {
                 .getVehiclesByName(dataFetchingEnvironment.getArgument("name"));
     }
 
+    public DataFetcher getVehiclesByService(){
+        return dataFetchingEnvironment -> mongoVolvoDB
+                .getVehiclesByService(dataFetchingEnvironment.getArgument("serviceName"),dataFetchingEnvironment.getArgument("serviceStatus"));
+    }
+
 
 }
 

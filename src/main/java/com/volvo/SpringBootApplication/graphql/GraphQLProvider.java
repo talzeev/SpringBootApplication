@@ -52,6 +52,7 @@ public class GraphQLProvider {
                 .dataFetcher("seedVehiclesfromApi", vehicleDataFetcher.seedVehiclesfromApi())
                 .dataFetcher("getAllVehicles", vehicleDataFetcher.getAllVehicles())
                 .dataFetcher("getVehicleById", vehicleDataFetcher.getVehicleById())
-                .dataFetcher("getVehiclesByName",vehicleDataFetcher.getVehiclesByName());
+                .dataFetcher("getVehiclesByName",vehicleDataFetcher.getVehiclesByName())
+                .dataFetcher("getVehiclesByService", vehicleDataFetcher.getVehiclesByService());
     }
 }
