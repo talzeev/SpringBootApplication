@@ -22,6 +22,11 @@ public class VehicleDataFetcher {
         return dataFetchingEnvironment -> mongoVolvoDB.seedVehiclesfromApi();
     }
 
+    public DataFetcher getVehicleById(){
+        return dataFetchingEnvironment -> mongoVolvoDB
+                .getVehicleById(dataFetchingEnvironment.getArgument("id"));
+    }
+
 
 }
 

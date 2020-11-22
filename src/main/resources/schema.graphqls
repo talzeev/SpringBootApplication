@@ -29,4 +29,5 @@ type Service{
 type Query{
     seedVehiclesfromApi: [Vehicle]
     getAllVehicles: [Vehicle]
+    getVehicleById(id: ID): Vehicle
 }

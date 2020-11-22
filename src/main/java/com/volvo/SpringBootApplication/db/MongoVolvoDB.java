@@ -80,5 +80,8 @@ public class MongoVolvoDB {
         return collection.find();
     }
 
+    public DBObject getVehicleById(String id){
+         return collection.findOne(new BasicDBObject("id", id));
+    }
 
 }
