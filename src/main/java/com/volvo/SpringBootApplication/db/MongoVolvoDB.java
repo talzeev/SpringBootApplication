@@ -13,6 +13,7 @@ import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 
 public class MongoVolvoDB {
     public static MongoClient mongoClient;
@@ -95,8 +96,29 @@ public class MongoVolvoDB {
     }
 
     public DBCursor getVehiclesByService(String serviceName, String serviceStatus){
-        return  collection.find((DBObject) (new BasicDBObject("services.services.serviceName",serviceName))
-                .append("services.services.status",serviceStatus));
+
+        /* Option 1 throwing error $elemnMatch
+        BasicDBObject projection = new BasicDBObject(new BasicDBObject("services",
+        new BasicDBObject("$elemMatch", new BasicDBObject("serviceName", serviceName))));
+        return  collection.find(new BasicDBObject(), projection);
+         */
+
+        /* Option 2 services.status = null
+                DBCursor cursor = collection.find((DBObject) (new BasicDBObject("services.services.serviceName",serviceName)));
+        ArrayList<BasicDBObject> services= new ArrayList<>();
+        while(cursor.hasNext()){
+            services.add((BasicDBObject) cursor.next().get("services"));
+        }
+        for (int i = 0 ; i <services.size() ; i++){
+            System.out.println(services.get(i).get("services"));
+        }
+         */
+        
+
+        //Option 3 just working serviceName
+        return  collection.find((DBObject) (new BasicDBObject("services.services.serviceName",serviceName)).
+                append("services.services.status",serviceStatus));
+
     }
 
 }
