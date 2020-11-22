@@ -22,7 +22,7 @@ Associated dependences can be found in build.gradle.
 2.- Run:
 
 ```bash
-cd newFolder
+cd newFolder/SpringBootApplication
 gradle bootRun
 ```
 You should see:
