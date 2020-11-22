@@ -1,0 +1,32 @@
+type Vehicle{
+    id: String
+    name: String
+    info: Info
+    services: Services
+}
+
+type Info{
+    msidn: String
+    engineStatus: String
+    fleet: String
+    brand: String
+    countryOfOperation: String
+    chassisNumber: Int
+    chassisSeries: String
+}
+
+type Services{
+    communicationStatus: String
+    services: [Service]
+}
+
+type Service{
+    serviceName: String
+    status: String
+    lastUpdate: String
+}
+
+type Query{
+    seedVehiclesfromApi: [Vehicle]
+    getAllVehicles: [Vehicle]
+}
