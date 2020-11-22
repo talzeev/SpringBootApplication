@@ -53,7 +53,7 @@ If the external API is running, MongoDB is installed and this project running su
 
 seedVehiclesfromApi [Vehicle]
 ```
-Fetch data from external API, handle errors, insert in the Mongo DataBase created in the constructor. Return all info from the collection (vehicles) after being created. In my newwork with my device take 10-20 seconds to make the whole proccess. O(n) time complexity.
+Fetch data from external API, handle errors from server and client, insert in the Mongo DataBase created in the constructor. Return all info from the collection (vehicles) after being created. In my network with my device take 10-20 seconds to make the whole proccess. O(n) time complexity.
 
 ```graphQL
 getAllVehicles [Vehicle]
