@@ -30,4 +30,5 @@ type Query{
     seedVehiclesfromApi: [Vehicle]
     getAllVehicles: [Vehicle]
     getVehicleById(id: ID): Vehicle
+    getVehiclesByName(name: String): [Vehicle]
 }

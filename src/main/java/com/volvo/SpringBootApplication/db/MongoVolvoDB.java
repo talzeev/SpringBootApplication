@@ -7,6 +7,7 @@ import com.mongodb.util.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
@@ -17,9 +18,6 @@ public class MongoVolvoDB {
     public static MongoClient mongoClient;
     public static DB database;
     public static DBCollection collection;
-
-    @Autowired
-    private RestTemplateBuilder builder;
 
 
     public MongoVolvoDB() throws UnknownHostException {
@@ -84,4 +82,11 @@ public class MongoVolvoDB {
          return collection.findOne(new BasicDBObject("id", id));
     }
 
+    @GetMapping("regex")
+    public DBCursor getVehiclesByName(String name){
+        BasicDBObject regexQuery = new BasicDBObject();
+
+         return collection.find((DBObject) regexQuery.append("name",
+                new BasicDBObject("$regex", name)));
+    }
 }

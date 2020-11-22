@@ -51,6 +51,7 @@ public class GraphQLProvider {
         return TypeRuntimeWiring.newTypeWiring("Query")
                 .dataFetcher("seedVehiclesfromApi", vehicleDataFetcher.seedVehiclesfromApi())
                 .dataFetcher("getAllVehicles", vehicleDataFetcher.getAllVehicles())
-                .dataFetcher("getVehicleById", vehicleDataFetcher.getVehicleById());
+                .dataFetcher("getVehicleById", vehicleDataFetcher.getVehicleById())
+                .dataFetcher("getVehiclesByName",vehicleDataFetcher.getVehiclesByName());
     }
 }
