@@ -31,7 +31,8 @@ public class MongoVolvoDB {
 
 
     public DBCursor seedVehiclesfromApi(){
-        String fooResourceUrl = "http://localhost:1337/vehicle";
+        String Url = "http://localhost:1337/vehicle";
+        String fooResourceUrl = Url + "/list";
         RestTemplate restTemplateVehicle = new RestTemplate();
         RestTemplate restTemplateInfo = new RestTemplate();
         RestTemplate restTemplateService = new RestTemplate();
@@ -43,8 +44,8 @@ public class MongoVolvoDB {
         for(int i=0 ; i< obj.getAsJsonArray("vehicles").size() ; i++){
             String objectString = (obj.getAsJsonArray("vehicles").get(i).toString());
             BasicDBObject dbObject = (BasicDBObject) JSON.parse(objectString);
-            String fooResourceUrlInfo = "http://localhost:1337/info?id="+dbObject.get("id");
-            String fooResourceUrlService = "http://localhost:1337/services?id="+dbObject.get("id");
+            String fooResourceUrlInfo = Url + "/info?id="+dbObject.get("id");
+            String fooResourceUrlService = Url + "/services?id="+dbObject.get("id");
 
             try{
                 ResponseEntity<String> responseInfo =
