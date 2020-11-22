@@ -82,5 +82,5 @@ More than the result, I am glad to participate in the project, It was a good cha
 Tal Berenstein.
 
 PS: It's 17:46 at the moment, I will keep going with the last requirement with a bit more time than I have today.
-
 PS2: .gitignore for JAVA from GitHub Desktop miss a lot of necessary ignores, that's the reason I had to update it after the first commit.
+PS3: I almost got the last requirement, I was close I think. I left comments about my tries.
